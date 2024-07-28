@@ -17,22 +17,17 @@ Usage: get --[FLAG]
 
 
 ```shell
-# Ip address (public v4, local)
-get --ip  
+get --ip # Ip address (public v4, local)  
 ```
 ```shell
-# CPU information
-get --cpu 
+get --cpu # CPU information 
 ```
 ```shell
-# OS information
-get --os  
+get --os # OS information  
 ```
 ```shell
-# Memory/RAM usage 
-get --ram  
+get --ram # Memory/RAM usage 
 ```
 ```shell
-# Environment variables 
-get --env  
+get --env # Environment variables 
 ```
