@@ -1,5 +1,5 @@
 # get
-A shell (terminal) utility to get mostly used data easily
+A convenient terminal app to get PC system-related data: 'get'
 
 <hr>
 
