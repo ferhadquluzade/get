@@ -4,24 +4,26 @@ An shell (terminal) utility to get mostly used data easily
 Usage: get [FLAG]
 
 <hr>
+# Installing
+```shell
+git clone https://github.com/ferhadquluzade/get.git
+cd get
+npm install 
+npm install -g 
+```
 
- - Ip address (public v4 and local)
 ```shell
-  get --ip
+ get --ip  # Ip address (public v4, local)
 ```
-- CPU information
 ```shell
-get --cpu
+ get --cpu # CPU information
 ```
-- OS information
 ```shell
- get --os
+ get --os  # OS information
 ```
-- Memory/RAM usage 
 ```shell
-get --ram
+get --ram  # Memory/RAM usage 
 ```
-- Environment variables 
 ```shell
-get --env
+get --env  # Environment variables 
 ```
