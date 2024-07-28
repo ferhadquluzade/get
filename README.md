@@ -1,8 +1,6 @@
 # get
 An shell (terminal) utility to get mostly used data easily
 
-Usage: get [FLAG]
-
 <hr>
 
 # Installing
@@ -15,6 +13,8 @@ npm install -g
 ```
 
 # Usage
+Usage: get --[FLAG]
+
 
 ```shell
 get --ip  # Ip address (public v4, local)
