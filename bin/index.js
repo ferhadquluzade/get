@@ -27,6 +27,10 @@ async function main() {
         const memoryInfo = getMemoryInfo();
         console.log("Memory Information:", memoryInfo);
         break;
+      case "--cpu":
+        const cpuInfo = getCpuInfo();
+        console.log("Memory Information:", cpuInfo);
+        break;
       case "--ip":
         const ipInfo = await getIpInfo();
         console.log("Ip Information:", ipInfo);
@@ -34,10 +38,6 @@ async function main() {
       case "--os":
         const osInfo = getOsInfo();
         console.log("OS Information:", osInfo);
-        break;
-      case "--memory":
-        const cpuInfo = getCpuInfo();
-        console.log("CPU Information:", cpuInfo);
         break;
       default:
         usage();
@@ -51,9 +51,11 @@ async function main() {
 
 function usage() {
   console.log(`Usage: get [OPTION]
---ip\tIp address (v4)
+--ip\tIp address (v4 and local)
 --cpu\tCPU information
---os\tOS information`);
+--os\tOS information
+--ram\tMemory/RAM usage
+--env\tEnvironment variables`);
 }
 
 main();
