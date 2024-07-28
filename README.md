@@ -5,6 +5,7 @@ Usage: get [FLAG]
 
 <hr>
 # Installing
+
 ```shell
 git clone https://github.com/ferhadquluzade/get.git
 cd get
