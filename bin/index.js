@@ -29,7 +29,7 @@ async function main() {
         break;
       case "--cpu":
         const cpuInfo = getCpuInfo();
-        console.log("Memory Information:", cpuInfo);
+        console.log("Cpu Information:", cpuInfo);
         break;
       case "--ip":
         const ipInfo = await getIpInfo();
