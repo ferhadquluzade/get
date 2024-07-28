@@ -17,13 +17,13 @@ npm install -g
 # Usage
 
 ```shell
- get --ip  # Ip address (public v4, local)
+get --ip  # Ip address (public v4, local)
 ```
 ```shell
- get --cpu # CPU information
+get --cpu # CPU information
 ```
 ```shell
- get --os  # OS information
+get --os  # OS information
 ```
 ```shell
 get --ram  # Memory/RAM usage 
