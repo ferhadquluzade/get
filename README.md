@@ -4,6 +4,7 @@ An shell (terminal) utility to get mostly used data easily
 Usage: get [FLAG]
 
 <hr>
+
 # Installing
 
 ```shell
