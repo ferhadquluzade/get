@@ -14,6 +14,8 @@ npm install
 npm install -g 
 ```
 
+# Usage
+
 ```shell
  get --ip  # Ip address (public v4, local)
 ```
