@@ -31,3 +31,6 @@ get --ram # Memory/RAM usage
 ```shell
 get --env # Environment variables 
 ```
+```shell
+get --user # User name 
+```
