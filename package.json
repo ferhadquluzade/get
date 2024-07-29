@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "A convenient terminal app to get PC system-related data: 'get'",
   "dependencies": {
     "arg": "^5.0.2",
     "is-online": "^11.0.0",

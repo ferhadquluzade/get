@@ -3,7 +3,7 @@ import arg from "arg";
 import { getIpInfo } from "./subcmd/ip.js";
 import { getCpuInfo } from "./subcmd/cpu.js";
 import { getOsInfo } from "./subcmd/os.js";
-import { getMemoryInfo } from "./subcmd/memory.js";
+import { getRamInfo } from "./subcmd/ram.js";
 import { getEnvInfo } from "./subcmd/env.js";
 
 async function main() {
@@ -21,23 +21,23 @@ async function main() {
     switch (option) {
       case "--env":
         const envInfo = getEnvInfo();
-        console.log("Memory Information:", envInfo);
+        console.log("Environment variables:", envInfo);
         break;
       case "--ram":
-        const memoryInfo = getMemoryInfo();
-        console.log("Memory Information:", memoryInfo);
+        const ramInfo = getRamInfo();
+        console.log("RAM/Memory:", ramInfo);
         break;
       case "--cpu":
         const cpuInfo = getCpuInfo();
-        console.log("Cpu Information:", cpuInfo);
+        console.log("CPU:", cpuInfo);
         break;
       case "--ip":
         const ipInfo = await getIpInfo();
-        console.log("Ip Information:", ipInfo);
+        console.log("Ip:", ipInfo);
         break;
       case "--os":
         const osInfo = getOsInfo();
-        console.log("OS Information:", osInfo);
+        console.log("OS:", osInfo);
         break;
       default:
         usage();
@@ -50,11 +50,11 @@ async function main() {
 }
 
 function usage() {
-  console.log(`Usage: get [OPTION]
+  console.log(`Usage: get --[FLAG]
 --ip\tIp address (v4 and local)
 --cpu\tCPU information
 --os\tOS information
---ram\tMemory/RAM usage
+--ram\tRAM/Memory usage
 --env\tEnvironment variables`);
 }
 

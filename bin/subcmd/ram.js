@@ -1,7 +1,7 @@
 import os from "os";
 import { formatBytes } from "../formatter/bytes.js";
 
-export const getMemoryInfo = () => {
+export const getRamInfo = () => {
   const totalMemory = os.totalmem();
   const freeMemory = os.freemem();
   const usedMemory = totalMemory - freeMemory;
