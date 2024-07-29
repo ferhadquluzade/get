@@ -7,7 +7,6 @@ export const getOsInfo = () => {
     type: os.type(),
     release: os.release(),
     hostname: os.hostname(),
-    userInfo: os.userInfo().username,
     uptime: formatTime(os.uptime()),
   };
 };

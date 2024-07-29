@@ -5,6 +5,7 @@ import { getCpuInfo } from "./subcmd/cpu.js";
 import { getOsInfo } from "./subcmd/os.js";
 import { getRamInfo } from "./subcmd/ram.js";
 import { getEnvInfo } from "./subcmd/env.js";
+import { getUserInfo } from "./subcmd/user.js";
 
 async function main() {
   try {
@@ -14,11 +15,16 @@ async function main() {
       "--os": Boolean,
       "--ram": Boolean,
       "--env": Boolean,
+      "--user": Boolean,
     });
 
     const option = Object.keys(args).find((key) => args[key] === true);
 
     switch (option) {
+      case "--user":
+        const userInfo = getUserInfo();
+        console.log("User:", userInfo);
+        break;
       case "--env":
         const envInfo = getEnvInfo();
         console.log("Environment variables:", envInfo);
@@ -55,7 +61,8 @@ function usage() {
 --cpu\tCPU information
 --os\tOS information
 --ram\tRAM/Memory usage
---env\tEnvironment variables`);
+--env\tEnvironment variables
+--user\tUser information`);
 }
 
 main();
