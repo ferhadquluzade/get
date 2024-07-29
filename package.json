@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "A terminal app to get PC system-related data easily: 'get'",
   "dependencies": {
     "arg": "^5.0.2",
