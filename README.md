@@ -1,5 +1,5 @@
 # get
-A convenient terminal app to get PC system-related data: 'get'
+A terminal app to get PC system-related data easily: 'get'
 
 <hr>
 
