@@ -1,5 +1,5 @@
 # get
-A terminal app to get PC system-related(ip, cpu, os, ram usage, env variables, user) data easily: 'get'
+A terminal app to get system-related(ip, cpu, os, ram usage, env variables, user) data easily: 'get'
 
 <hr>
 
