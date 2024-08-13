@@ -10,10 +10,8 @@ export const getIpInfo = async () => {
         continue;
       }
       return {
-        IPv4: await publicIpv4(),
-        localAddress: iface.address,
-        mac: iface.mac,
-        netmask: iface.netmask,
+        public: await publicIpv4(),
+        local: iface.address,
       };
     }
   }
