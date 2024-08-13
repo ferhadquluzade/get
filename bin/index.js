@@ -23,27 +23,27 @@ async function main() {
     switch (option) {
       case "--user":
         const userInfo = getUserInfo();
-        console.log("User:", userInfo);
+        console.log(userInfo);
         break;
       case "--env":
         const envInfo = getEnvInfo();
-        console.log("Environment variables:", envInfo);
+        console.log(envInfo);
         break;
       case "--ram":
         const ramInfo = getRamInfo();
-        console.log("RAM/Memory:", ramInfo);
-        break;
+        console.log(ramInfo);
+        break
       case "--cpu":
         const cpuInfo = getCpuInfo();
-        console.log("CPU:", cpuInfo);
+        console.log(cpuInfo);
         break;
       case "--ip":
         const ipInfo = await getIpInfo();
-        console.log("Ip:", ipInfo);
+        console.log(ipInfo);
         break;
       case "--os":
         const osInfo = getOsInfo();
-        console.log("OS:", osInfo);
+        console.log(osInfo);
         break;
       default:
         usage();
