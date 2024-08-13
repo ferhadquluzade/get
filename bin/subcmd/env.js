@@ -1,11 +1,14 @@
 import process from "process";
 
 export const getEnvInfo = () => {
-  const envVars = {};
+  let envInfo = "";
+
+  const GREEN = "\x1b[32m";
+  const RESET = "\x1b[0m";
 
   for (const [key, value] of Object.entries(process.env)) {
-    envVars[key] = value;
+    envInfo += `${key}=${value}\n`;
   }
 
-  return envVars;
+  return envInfo;
 };

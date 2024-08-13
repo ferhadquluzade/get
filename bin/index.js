@@ -6,6 +6,7 @@ import { getOsInfo } from "./subcmd/os.js";
 import { getRamInfo } from "./subcmd/ram.js";
 import { getEnvInfo } from "./subcmd/env.js";
 import { getUserInfo } from "./subcmd/user.js";
+import { getHostInfo } from "./subcmd/host.js";
 
 async function main() {
   try {
@@ -16,11 +17,16 @@ async function main() {
       "--ram": Boolean,
       "--env": Boolean,
       "--user": Boolean,
+      "--host": Boolean,
     });
 
     const option = Object.keys(args).find((key) => args[key] === true);
 
     switch (option) {
+      case "--host":
+        const hostInfo = getHostInfo();
+        console.log(hostInfo);
+        break;
       case "--user":
         const userInfo = getUserInfo();
         console.log(userInfo);
@@ -32,7 +38,7 @@ async function main() {
       case "--ram":
         const ramInfo = getRamInfo();
         console.log(ramInfo);
-        break
+        break;
       case "--cpu":
         const cpuInfo = getCpuInfo();
         console.log(cpuInfo);
@@ -57,7 +63,7 @@ async function main() {
 
 function usage() {
   console.log(`Usage: get --[FLAG]
---ip\tIp address (v4 and local)
+--ip\tIp address (public v4 and local)
 --cpu\tCPU information
 --os\tOS information
 --ram\tRAM/Memory usage

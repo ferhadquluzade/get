@@ -1,14 +1,13 @@
 import os from "os";
 
 export const getCpuInfo = () => {
-  const cpus = os.cpus().map((cpu) => ({
-    model: cpu.model,
-    speed: cpu.speed,
-  }));
+  const cpus = os
+    .cpus()
+    .map((cpu, index) => `Core ${index + 1}: ${cpu.model} @ ${cpu.speed}MHz`)
+    .join("\n");
 
-  return {
-    numCores: os.cpus().length,
-    arch: os.arch(),
-    cpus: cpus,
-  };
+  return `architecture: ${os.arch()}
+core Number: ${os.cpus().length}
+cpus:
+${cpus}`;
 };
