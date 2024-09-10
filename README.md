@@ -34,3 +34,9 @@ get --env # Environment variables
 ```shell
 get --user # User name 
 ```
+```shell
+get --host # Host device information
+```
+```shell
+get --gpu # GPU information
+```
