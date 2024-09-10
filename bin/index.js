@@ -7,6 +7,7 @@ import { getRamInfo } from "./subcmd/ram.js";
 import { getEnvInfo } from "./subcmd/env.js";
 import { getUserInfo } from "./subcmd/user.js";
 import { getHostInfo } from "./subcmd/host.js";
+import { getGpuInfo } from "./subcmd/gpu.js";
 
 async function main() {
   try {
@@ -18,6 +19,7 @@ async function main() {
       "--env": Boolean,
       "--user": Boolean,
       "--host": Boolean,
+      "--gpu": Boolean,
     });
 
     const option = Object.keys(args).find((key) => args[key] === true);
@@ -51,6 +53,10 @@ async function main() {
         const osInfo = getOsInfo();
         console.log(osInfo);
         break;
+      case "--gpu":
+        const gpuInfo = await getGpuInfo();
+        console.log(gpuInfo);
+        break;
       default:
         usage();
         break;
@@ -68,7 +74,8 @@ function usage() {
 --os\tOS information
 --ram\tRAM/Memory usage
 --env\tEnvironment variables
---user\tUser information`);
+--user\tUser information
+--host\tHost information`);
 }
 
 main();

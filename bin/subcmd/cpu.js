@@ -1,13 +1,25 @@
 import os from "os";
 
 export const getCpuInfo = () => {
-  const cpus = os
-    .cpus()
-    .map((cpu, index) => `Core ${index + 1}: ${cpu.model} @ ${cpu.speed}MHz`)
-    .join("\n");
+  const cpus = os.cpus();
+  let result = `architecture: ${os.arch()}
+cpus: ${cpus.length}`;
 
-  return `architecture: ${os.arch()}
-core Number: ${os.cpus().length}
-cpus:
-${cpus}`;
+  if (cpus.length === 1)
+    return (
+      result +
+      `\nmodel: ${cpus[0].model}
+speed: ${cpus[0].speed} MHz`
+    );
+
+  cpus.forEach((cpu, index) => {
+    result += processedResult(cpu, index);
+  });
+  return result;
+};
+
+const processedResult = (cpu, index) => {
+  return `\ncpu#${index + 1}:
+  \tmodel: ${cpu.model}
+  \tspeed: ${cpu.speed} MHz`;
 };
