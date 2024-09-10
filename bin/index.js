@@ -25,6 +25,10 @@ async function main() {
     const option = Object.keys(args).find((key) => args[key] === true);
 
     switch (option) {
+      case "--gpu":
+        const gpuInfo = await getGpuInfo();
+        console.log(gpuInfo);
+        break;
       case "--host":
         const hostInfo = getHostInfo();
         console.log(hostInfo);
@@ -53,10 +57,6 @@ async function main() {
         const osInfo = getOsInfo();
         console.log(osInfo);
         break;
-      case "--gpu":
-        const gpuInfo = await getGpuInfo();
-        console.log(gpuInfo);
-        break;
       default:
         usage();
         break;
@@ -75,7 +75,8 @@ function usage() {
 --ram\tRAM/Memory usage
 --env\tEnvironment variables
 --user\tUser information
---host\tHost information`);
+--host\tHost information
+--gpu\tGPU information`);
 }
 
 main();
