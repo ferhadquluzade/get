@@ -1,5 +1,5 @@
 # get
-A terminal app to get system-related(ip, cpu, os, ram, env variables, user, host, gpu) data easily: 'get'
+A convenient terminal app to get PC system-related data: 'get'
 
 <hr>
 
@@ -26,17 +26,8 @@ get --cpu # CPU information
 get --os # OS information  
 ```
 ```shell
-get --ram # Memory/RAM information 
+get --ram # Memory/RAM usage 
 ```
 ```shell
 get --env # Environment variables 
-```
-```shell
-get --user # User name 
-```
-```shell
-get --host # Host device information
-```
-```shell
-get --gpu # GPU information
 ```
