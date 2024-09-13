@@ -26,7 +26,7 @@ get --cpu # CPU information
 get --os # OS information  
 ```
 ```shell
-get --ram # Memory/RAM usage 
+get --ram # Memory/RAM information 
 ```
 ```shell
 get --env # Environment variables 
