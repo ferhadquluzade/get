@@ -9,8 +9,12 @@ export const getIpInfo = async () => {
       if ("IPv4" !== iface.family || iface.internal !== false) {
         continue;
       }
-      return `public: ${await publicIpv4()}
-local: ${iface.address}`;
+      return {
+        IPv4: await publicIpv4(),
+        localAddress: iface.address,
+        mac: iface.mac,
+        netmask: iface.netmask,
+      };
     }
   }
   return { error: "No local IP found" };
