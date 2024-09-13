@@ -42,7 +42,7 @@ async function main() {
         console.log(envInfo);
         break;
       case "--ram":
-        const ramInfo = getRamInfo();
+        const ramInfo = await getRamInfo();
         console.log(ramInfo);
         break;
       case "--cpu":

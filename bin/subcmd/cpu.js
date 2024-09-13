@@ -5,13 +5,6 @@ export const getCpuInfo = () => {
   let result = `architecture: ${os.arch()}
 cpus: ${cpus.length}`;
 
-  if (cpus.length === 1)
-    return (
-      result +
-      `\nmodel: ${cpus[0].model}
-speed: ${cpus[0].speed} MHz`
-    );
-
   cpus.forEach((cpu, index) => {
     result += processedResult(cpu, index);
   });
