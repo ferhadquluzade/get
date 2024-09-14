@@ -14,7 +14,7 @@ used: ${formatBytes(usedMemory)},
 rams: ${rams.length}`;
 
   rams.forEach((ram, index) => {
-    result += `\nram#${index + 1}
+    result += `\nram#${index + 1}:
 \tvendor: ${ram.manufacturer}
 \ttype: ${ram.type}`;
   });

@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "description": "A terminal app to get PC system-related data easily: 'get'",
+  "description": "A terminal app to get system-related(ip, cpu, os, ram, env variables, user, host, gpu) data easily: 'get'",
   "dependencies": {
     "arg": "^5.0.2",
     "is-online": "^11.0.0",

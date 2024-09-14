@@ -72,7 +72,7 @@ function usage() {
 --ip\tIp address (public v4 and local)
 --cpu\tCPU information
 --os\tOS information
---ram\tRAM/Memory usage
+--ram\tRAM/Memory information
 --env\tEnvironment variables
 --user\tUser information
 --host\tHost information

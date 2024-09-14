@@ -7,7 +7,7 @@ export const getEnvInfo = () => {
   const RESET = "\x1b[0m";
 
   for (const [key, value] of Object.entries(process.env)) {
-    envInfo += `${key}=${value}\n`;
+    envInfo += `${GREEN}${key}${RESET}=${value}\n`;
   }
 
   return envInfo;
