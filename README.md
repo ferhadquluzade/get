@@ -32,7 +32,7 @@ get --ram # Memory/RAM information
 get --env # Environment variables 
 ```
 ```shell
-get --user # User name 
+get --user # Username 
 ```
 ```shell
 get --host # Hostname
