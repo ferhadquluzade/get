@@ -35,7 +35,7 @@ get --env # Environment variables
 get --user # User name 
 ```
 ```shell
-get --host # Host device information
+get --host # Hostname
 ```
 ```shell
 get --gpu # GPU information
