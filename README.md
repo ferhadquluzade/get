@@ -40,3 +40,8 @@ get --host # Hostname
 ```shell
 get --gpu # GPU information
 ```
+```shell
+get --net # Network(interfaces) information
+``````shell
+get --server # Server with basic authentication 
+```
