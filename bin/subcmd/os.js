@@ -5,5 +5,5 @@ export const getOsInfo = () => {
   return `platform: ${os.platform()}
 type: ${os.type()}
 release: ${os.release()}
-wake: ${formatTime(os.uptime())}`;
+awake: ${formatTime(os.uptime())}`;
 };
