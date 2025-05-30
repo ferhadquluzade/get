@@ -13,36 +13,36 @@ npm install -g
 ```
 
 # Usage
-Usage: get --[FLAG]
+Usage: get [subcommand]
 
 
 ```shell
-get --ip # Ip address (public v4, local)  
+get ip # Ip address (public v4, local)  
 ```
 ```shell
-get --cpu # CPU information 
+get cpu # CPU information 
 ```
 ```shell
-get --os # OS information  
+get os # OS information  
 ```
 ```shell
-get --ram # Memory/RAM information 
+get ram # Memory/RAM information 
 ```
 ```shell
-get --env # Environment variables 
+get env # Environment variables 
 ```
 ```shell
-get --user # Username 
+get user # Username 
 ```
 ```shell
-get --host # Hostname
+get host # Hostname
 ```
 ```shell
-get --gpu # GPU information
+get gpu # GPU information
 ```
 ```shell
-get --net # Network(interfaces) information
+get net # Network(interfaces) information
 ```
 ```shell
-get --server # Server with basic authentication 
+get server # Server with basic authentication 
 ```
