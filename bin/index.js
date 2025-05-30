@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import arg from "arg";
 import { getIpInfo } from "./subcmd/ip.js";
 import { getCpuInfo } from "./subcmd/cpu.js";
 import { getOsInfo } from "./subcmd/os.js";
@@ -9,64 +8,41 @@ import { getUserInfo } from "./subcmd/user.js";
 import { getHostInfo } from "./subcmd/host.js";
 import { getGpuInfo } from "./subcmd/gpu.js";
 import { getNetInfo } from "./subcmd/net.js";
-
 import { server } from "./subcmd/server.js";
 
 async function main() {
+  const command = process.argv[2]; // e.g. "ip", "cpu", etc.
+
   try {
-    const args = arg({
-      "--ip": Boolean,
-      "--cpu": Boolean,
-      "--os": Boolean,
-      "--ram": Boolean,
-      "--env": Boolean,
-      "--user": Boolean,
-      "--host": Boolean,
-      "--gpu": Boolean,
-      "--net": Boolean,
-      "--server": Boolean,
-    });
-
-    const option = Object.keys(args).find((key) => args[key] === true);
-
-    switch (option) {
-      case "--gpu":
-        const gpuInfo = await getGpuInfo();
-        console.log(gpuInfo);
+    switch (command) {
+      case "ip":
+        console.log(await getIpInfo());
         break;
-      case "--host":
-        const hostInfo = getHostInfo();
-        console.log(hostInfo);
+      case "cpu":
+        console.log(getCpuInfo());
         break;
-      case "--user":
-        const userInfo = getUserInfo();
-        console.log(userInfo);
+      case "os":
+        console.log(getOsInfo());
         break;
-      case "--env":
-        const envInfo = getEnvInfo();
-        console.log(envInfo);
+      case "ram":
+        console.log(await getRamInfo());
         break;
-      case "--ram":
-        const ramInfo = await getRamInfo();
-        console.log(ramInfo);
+      case "env":
+        console.log(getEnvInfo());
         break;
-      case "--cpu":
-        const cpuInfo = getCpuInfo();
-        console.log(cpuInfo);
+      case "user":
+        console.log(getUserInfo());
         break;
-      case "--ip":
-        const ipInfo = await getIpInfo();
-        console.log(ipInfo);
+      case "host":
+        console.log(getHostInfo());
         break;
-      case "--os":
-        const osInfo = getOsInfo();
-        console.log(osInfo);
+      case "gpu":
+        console.log(await getGpuInfo());
         break;
-      case "--net":
-        const netInfo = await getNetInfo();
-        console.log(netInfo);
+      case "net":
+        console.log(await getNetInfo());
         break;
-      case "--server":
+      case "server":
         server();
         break;
       default:
@@ -74,23 +50,25 @@ async function main() {
         break;
     }
   } catch (e) {
-    console.error(e.message);
+    console.error("Error:", e.message);
     usage();
   }
 }
 
 function usage() {
-  console.log(`Usage: get --[FLAG]
---ip\tIp address (public v4 and local)
---cpu\tCPU information
---os\tOS information
---ram\tRAM/Memory information
---env\tEnvironment variables
---user\tUser information
---host\tHost information
---gpu\tGPU information
---net\tNetwork information
---server\tSimple server`);
+  console.log(`Usage: get <command>
+
+Commands:
+  ip       Get IP address (public & local)
+  cpu      CPU information
+  os       OS information
+  ram      RAM/Memory information
+  env      Environment variables
+  user     User information
+  host     Host information
+  gpu      GPU information
+  net      Network information
+  server   Start simple server with authentication`);
 }
 
 main();
