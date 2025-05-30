@@ -1,6 +1,6 @@
 {
   "name": "get",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "main": "index.js",
   "type": "module",
   "bin": "./bin/index.js",
@@ -12,9 +12,9 @@
   "license": "MIT",
   "description": "A terminal app to get system-related(ip, cpu, os, ram, env variables, user, host, gpu) data easily: 'get'",
   "dependencies": {
-    "arg": "^5.0.2",
-    "is-online": "^11.0.0",
-    "public-ip": "^7.0.1",
-    "systeminformation": "^5.23.5"
+    "arg": "latest",
+    "is-online": "latest",
+    "public-ip": "latest",
+    "systeminformation": "latest"
   }
 }
