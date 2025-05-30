@@ -8,6 +8,9 @@ import { getEnvInfo } from "./subcmd/env.js";
 import { getUserInfo } from "./subcmd/user.js";
 import { getHostInfo } from "./subcmd/host.js";
 import { getGpuInfo } from "./subcmd/gpu.js";
+import { getNetInfo } from "./subcmd/net.js";
+
+import { server } from "./subcmd/server.js";
 
 async function main() {
   try {
@@ -20,6 +23,8 @@ async function main() {
       "--user": Boolean,
       "--host": Boolean,
       "--gpu": Boolean,
+      "--net": Boolean,
+      "--server": Boolean,
     });
 
     const option = Object.keys(args).find((key) => args[key] === true);
@@ -57,6 +62,13 @@ async function main() {
         const osInfo = getOsInfo();
         console.log(osInfo);
         break;
+      case "--net":
+        const netInfo = await getNetInfo();
+        console.log(netInfo);
+        break;
+      case "--server":
+        server();
+        break;
       default:
         usage();
         break;
@@ -76,7 +88,9 @@ function usage() {
 --env\tEnvironment variables
 --user\tUser information
 --host\tHost information
---gpu\tGPU information`);
+--gpu\tGPU information
+--net\tNetwork information
+--server\tSimple server`);
 }
 
 main();
