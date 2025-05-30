@@ -42,6 +42,7 @@ get --gpu # GPU information
 ```
 ```shell
 get --net # Network(interfaces) information
-``````shell
+```
+```shell
 get --server # Server with basic authentication 
 ```
