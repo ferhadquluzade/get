@@ -43,7 +43,10 @@ async function main() {
         console.log(await getNetInfo());
         break;
       case "server":
-        server();
+        const fileFlagIndex = process.argv.indexOf("--file");
+        const fileToServe =
+          fileFlagIndex !== -1 ? process.argv[fileFlagIndex + 1] : null;
+        server(fileToServe);
         break;
       default:
         usage();
@@ -59,16 +62,17 @@ function usage() {
   console.log(`Usage: get <command>
 
 Commands:
-  ip       Get IP address (public & local)
-  cpu      CPU information
-  os       OS information
-  ram      RAM/Memory information
-  env      Environment variables
-  user     User information
-  host     Host information
-  gpu      GPU information
-  net      Network information
-  server   Start simple server with authentication`);
+  ip\tGet IP address (public & local)
+  cpu\tCPU information
+  os\tOS information
+  ram\tRAM/Memory information
+  env\tEnvironment variables
+  user\tUser information
+  host\tHost information
+  gpu\tGPU information
+  net\tNetwork information
+  server\tStart simple server with authentication
+    --file <path>\tServe a specific file`);
 }
 
 main();
