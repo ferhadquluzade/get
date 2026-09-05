@@ -19,7 +19,6 @@ export const server = (filePath) => {
       return;
     }
 
-    // Decode Base64 credentials
     const base64Credentials = auth.split(" ")[1];
     const credentials = Buffer.from(base64Credentials, "base64").toString();
     const [username, passcode] = credentials.split(":");
@@ -32,16 +31,22 @@ export const server = (filePath) => {
 
     // Auth success
     if (filePath) {
+      const absolutePath = path.resolve(filePath);
+
+      if (!fs.existsSync(absolutePath)) {
+        res.writeHead(404, { "Content-Type": "text/plain" });
+        res.end("File not found: " + absolutePath);
+        return;
+      }
+
       try {
-        const absolutePath = path.resolve(filePath);
         const fileContent = fs.readFileSync(absolutePath);
         const contentType = getContentType(absolutePath);
-
         res.writeHead(200, { "Content-Type": contentType });
         res.end(fileContent);
       } catch (err) {
-        res.writeHead(404, { "Content-Type": "text/plain" });
-        res.end("File not found");
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.end("Error reading file: " + err.message);
       }
     } else {
       res.writeHead(200, { "Content-Type": "text/plain" });
